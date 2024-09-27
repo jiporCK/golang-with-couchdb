@@ -20,3 +20,15 @@ func (s *CourseService) CreateCourse(course entity.Course) error {
 func (s *CourseService) GetAllCourses() ([]entity.Course, error) {
 	return s.repo.GetAllCourses()
 }
+
+func (s *CourseService) GetCourseById(id string) (*entity.Course, error) {
+	return s.repo.GetCourseById(id)
+}
+
+func (s *CourseService) UpdateCourseById(id string, rev string, updatedCourse entity.Course) (*entity.Course, error) {
+	return s.repo.UpdateCourseById(id, rev, updatedCourse)
+}
+
+func (s *CourseService) DeleteCourseById(id string, rev string) error {
+	return s.repo.DeleteCourseById(id, rev)
+}
